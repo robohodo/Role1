@@ -1,2 +1,16 @@
 ---
 # tasks file for .
+
+- name: Create a local directoru
+  delegate_to: localhost
+  file:
+    path: '{{playbook_dir}}/new_directory'
+    state: directory
+    mode: "755"
+
+- name: Copy the requirements file
+  delegate_to: localhost
+  copy: 
+    src: files/requirements.yml
+    dest: '{{playbook_dir}}//new_directory/requirements.yml'
+    mode: '0500'
