@@ -1,7 +1,7 @@
 ---
 # tasks file for .
 
-- name: Create a local directoru
+- name: Create a local directory
   delegate_to: localhost
   file:
     path: '{{playbook_dir}}/new_directory'
